@@ -5,7 +5,6 @@ describe("sqlForPartialUpdate", function(){
         const theResult = sqlForPartialUpdate(
             {field1:"value1"},
             {field1:"field1",jsField2:"field2"});
-            console.log(theResult);
         expect(theResult).toEqual({
                 setCols:"\"field1\"=$1",
                 values:["value1"],
@@ -16,7 +15,6 @@ describe("sqlForPartialUpdate", function(){
         const theResult = sqlForPartialUpdate(
             {field1:"value1",jsField2:"value2"},
             {jsField2:"field2"});
-            console.log(theResult);
         expect(theResult).toEqual({
             setCols:"\"field1\"=$1, \"field2\"=$2",
             values:["value1","value2"],
